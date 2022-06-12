@@ -45,7 +45,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jonghyun/Desktop/project/mini_dooray_project"
+    "last_opened_file_path": "/Users/jonghyun/Desktop/project/mini_dooray_project",
+    "spring.configuration.checksum": "58bb8d0fa919fb3af9a1e702dbabed59"
   }
 }]]></component>
   <component name="RunManager">
@@ -66,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655026805430</updated>
       <workItem from="1655026808975" duration="46000" />
+      <workItem from="1655028600765" duration="25000" />
     </task>
     <servers />
   </component>
