@@ -1,8 +1,17 @@
-### Create
+### 1번 멤버가 프로젝트를 생성
 POST /project/register/1
 Host: localhost:8082
 Content-Type: application/json
 
 {
   "projectName": "TestProject03"
+}
+
+### 1번 멤버(관리자)가 프로젝트멤버를 등록
+POST /project/member/register/1
+Host: localhost:8082
+Content-Type: application/json
+
+{
+  "memberId": 2
 }

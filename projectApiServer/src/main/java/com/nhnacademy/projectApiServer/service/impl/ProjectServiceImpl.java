@@ -1,19 +1,19 @@
 package com.nhnacademy.projectApiServer.service.impl;
 
 import com.nhnacademy.projectApiServer.domain.ProjectDto;
+import com.nhnacademy.projectApiServer.domain.ProjectMemberDto;
 import com.nhnacademy.projectApiServer.domain.ProjectRegisterRequest;
+import com.nhnacademy.projectApiServer.entity.Member;
 import com.nhnacademy.projectApiServer.entity.Project;
 import com.nhnacademy.projectApiServer.entity.ProjectMember;
 import com.nhnacademy.projectApiServer.repository.MemberRepository;
 import com.nhnacademy.projectApiServer.repository.ProjectMemberRepository;
 import com.nhnacademy.projectApiServer.repository.ProjectRepository;
 import com.nhnacademy.projectApiServer.service.ProjectService;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -28,7 +28,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     @Transactional
-    public ProjectDto register(ProjectRegisterRequest req, Long createUserId) {
+    public ProjectDto projectRegister(ProjectRegisterRequest req, Long createUserId) {
         ProjectMember projectMember = new ProjectMember();
         ProjectDto result;
 
@@ -53,6 +53,29 @@ public class ProjectServiceImpl implements ProjectService {
         projectMember.setAdminYn("Y");
 
         projectMemberRepository.save(projectMember);
+
+        return result;
+    }
+
+    @Override
+    public ProjectMemberDto projectMemberRegister(Long memberId, Long adminUserId) {
+        Long projectId = projectMemberRepository.findProjectIdByAdminUserId(adminUserId);
+        ProjectMemberDto result = null;
+
+        ProjectMember projectMember = new ProjectMember();
+        ProjectMember.Id id = new ProjectMember.Id(memberId, projectId);
+
+        projectMember.setProjectMemberId(id);  // 파란키 셋팅
+        projectRepository.findById(projectId).ifPresent(projectMember::setProject); // projectMember 에 project mapping
+        projectMember.setAdminYn("N");
+
+        // member 가 존재할 경우에만 project 에 등록할 수 있어야 한다.
+        Optional<Member> member = memberRepository.findById(memberId);
+        if (member.isPresent()) {
+            projectMember.setMember(member.get());
+            result = modelMapper.map(projectMemberRepository.save(projectMember), ProjectMemberDto.class);
+
+        }
 
         return result;
     }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2788a79a-7530-4d11-a443-13436d7cdb8d" name="변경" comment="project api init" />
+    <list default="true" id="2788a79a-7530-4d11-a443-13436d7cdb8d" name="변경" comment="project 생성 rest api 구현(projectmember에도 admin등록됨)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +73,7 @@
       <workItem from="1655028600765" duration="25000" />
       <workItem from="1655034444481" duration="436000" />
       <workItem from="1655035991002" duration="31000" />
+      <workItem from="1655041851495" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="회원가입 rest api 구현">
       <created>1655034471800</created>
@@ -102,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655036014721</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="project 생성 rest api 구현(projectmember에도 admin등록됨)">
+      <created>1655041898115</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655041898115</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="회원가입 rest api 구현" />
     <MESSAGE value="project api init" />
-    <option name="LAST_COMMIT_MESSAGE" value="project api init" />
+    <MESSAGE value="project 생성 rest api 구현(projectmember에도 admin등록됨)" />
+    <option name="LAST_COMMIT_MESSAGE" value="project 생성 rest api 구현(projectmember에도 admin등록됨)" />
   </component>
 </project>
