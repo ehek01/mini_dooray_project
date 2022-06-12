@@ -1,0 +1,8 @@
+### Create
+POST /project/register/1
+Host: localhost:8082
+Content-Type: application/json
+
+{
+  "projectName": "TestProject03"
+}
