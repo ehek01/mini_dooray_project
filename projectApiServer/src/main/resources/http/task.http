@@ -5,5 +5,7 @@ Host: localhost:8082
 Content-Type: application/json
 
 {
-  "taskName": "task01"
+  "taskName": "task01",
+  "taskExpectedCompleteDt": "2022-06-14T15:48:22.820983",
+  "taskCompletedDt": "2022-06-14T15:48"
 }

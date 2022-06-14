@@ -6,6 +6,5 @@ import com.nhnacademy.projectApiServer.domain.ProjectRegisterRequest;
 
 public interface ProjectService {
     ProjectDto projectRegister(ProjectRegisterRequest req, Long createUser);
-
     ProjectMemberDto projectMemberRegister(Long memberId, Long adminUserId);
 }
