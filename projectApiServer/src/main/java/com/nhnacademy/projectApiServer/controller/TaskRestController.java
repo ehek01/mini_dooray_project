@@ -13,6 +13,7 @@ public class TaskRestController {
     @PostMapping("/register")
     public String taskRegister(@RequestParam("projectNo") Long projectNo,
                                @RequestParam("memberId") Long memberId) {
+        // todo : task 를 만들어봅시다.
         System.out.println(projectNo);
         System.out.println(memberId);
         return null;
